@@ -5,17 +5,22 @@ class field extends Component {
         return (
             <div>
             {this.props.elementName==='input'?
-                <div className="form-group mb-md-0">
+                <div className="form-group ">
                     <input className="form-control"
                         id={this.props.name}
                         type={this.props.type}
                         placeholder={this.props.placeholder} 
                         required="required"
                         data-validation-required-message="Please enter your phone number."
-                        value={this.props.value}
-                        onChange={ e => {this.props.onChange(e)}}
+                        name = {this.props.name}
+                        onBlur = {this.props.onBlur}
+                        onChange={ this.props.onChange}
                     />
-                    <p className="help-block text-danger"></p>
+                    <p className="help-block text-danger">
+                    {(this.props.touched && this.props.errors)&&
+                        <span>{this.props.errors}</span>
+                    }
+                </p>
                 </div>                       
             
             :
@@ -26,12 +31,18 @@ class field extends Component {
                     placeholder={this.props.placeholder} 
                     required="required"
                     data-validation-required-message="Please enter your phone number."
-                    value={this.props.value}
-                    onChange={ e => {this.props.onChange(e)}}       
+                    name = {this.props.name}
+                    onBlur = {this.props.onBlur}
+                    onChange={ this.props.onChange}    
                 ></textarea>
-                <p className="help-block text-danger"></p>
+                <p className="help-block text-danger">
+                    {(this.props.touched && this.props.errors)&&
+                        <span>{this.props.errors}</span>
+                    }
+                </p>
             </div>
             }
+                
             </div>
         );
     }
