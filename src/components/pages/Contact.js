@@ -83,6 +83,7 @@ export default withFormik ({
     validationSchema:Yup.object().shape({
         name: Yup.string()
                 .min(3,'Name should be between 3 to 10 characters')
+                .max(10,'Name should be between 3 to 10 characters')
                 .required('You should give your name'),
         email: Yup.string()
                 .email('Provide valid email')
@@ -93,6 +94,7 @@ export default withFormik ({
         message: Yup.string()
                 .min(100,'Minimum 100 charater are required')
                 .max(500,'Limit is of 500 character')
+                .required(),
 
     }),
     handleSubmit: (values, {setSubmitting})=>{

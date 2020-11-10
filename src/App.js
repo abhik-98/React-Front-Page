@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <PageWrapper>
-        <Route exact path="/">
+        <Route path="/">
           <Redirect to="/home" 
             component={Home}
           />
