@@ -17,7 +17,7 @@
     "web-vitals": "^0.2.4",
     "yup": "^0.29.3"
   },
-  "homepage": "https://abhik-98.github.io/ReactFrontEnd/",
+  "homepage": "https://abhik-98.github.io/react/",
   "scripts": {
     "predeploy":"npm run build",
     "deploy": "gh-pages -d build",
